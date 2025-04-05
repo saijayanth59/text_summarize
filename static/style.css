@@ -1,0 +1,113 @@
+/* static/style.css */
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1,
+h2,
+h3 {
+  color: #2c3e50; /* Dark blue */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+textarea,
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width */
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 150px;
+}
+
+button {
+  display: inline-block;
+  background-color: #3498db; /* Blue */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+.error-message {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red */
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.results {
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.result-box {
+  background-color: #eaf2f8; /* Light blue */
+  border: 1px solid #d4e6f1;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.result-box h3 {
+  margin-top: 0;
+  color: #1f618d; /* Darker blue for headings */
+}
+
+pre {
+  white-space: pre-wrap; /* Wrap long lines */
+  word-wrap: break-word; /* Break long words */
+  background-color: #fdfefe; /* Slightly off-white for pre background */
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  font-family: monospace; /* Use monospace font for code/text blocks */
+  font-size: 0.95rem;
+  max-height: 300px; /* Limit height and make scrollable */
+  overflow-y: auto;
+}

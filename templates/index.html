@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extractive Text Summarizer</title>
+    <!-- Link to the CSS file -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Extractive Text Summarizer</h1>
+      <p>
+        Enter the text you want to summarize and the desired number of sentences
+        for the summary.
+      </p>
+
+      <!-- Display error messages if any -->
+      {% if error %}
+      <div class="error-message">
+        <p><strong>Error:</strong> {{ error }}</p>
+      </div>
+      {% endif %}
+
+      <form method="POST" action="/">
+        <div class="form-group">
+          <label for="text">Text to Summarize:</label>
+          <!-- Use previously submitted text if available (e.g., after an error) -->
+          <textarea id="text" name="text" rows="15" required>
+{{ request.form['text'] if request.form['text'] else '' }}</textarea
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="num_sentences">Number of Sentences in Summary:</label>
+          <input
+            type="number"
+            id="num_sentences"
+            name="num_sentences"
+            min="1"
+            value="{{ request.form['num_sentences'] if request.form['num_sentences'] else 3 }}"
+            required
+          />
+        </div>
+
+        <button type="submit">Summarize</button>
+      </form>
+
+      <!-- Display results if available -->
+      {% if original_text and summary %}
+      <div class="results">
+        <h2>Results</h2>
+        <div class="result-box">
+          <h3>Original Text:</h3>
+          <pre>{{ original_text }}</pre>
+        </div>
+        <div class="result-box">
+          <h3>Summary:</h3>
+          <pre>{{ summary }}</pre>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
