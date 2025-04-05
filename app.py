@@ -37,8 +37,7 @@ def index():
                     # flash("Error: Number of sentences must be a positive integer.", "error")
                 else:
                     # --- Call Summarization Logic ---
-                    print(f"Received text (length {len(text)}), requesting {
-                          num_sentences} sentences.")  # Server log
+
                     summary = extractive_summarization(text, num_sentences)
                     print("Summarization complete.")  # Server log
 
@@ -67,9 +66,3 @@ def index():
     # --- Handle GET Request ---
     # Just display the empty form on the initial visit
     return render_template('index.html', original_text=None, summary=None, error=None)
-
-
-if __name__ == '__main__':
-    # Set debug=False for production
-    # Use host='0.0.0.0' to make it accessible on your network
-    app.run(debug=True, host='0.0.0.0', port=5000)
