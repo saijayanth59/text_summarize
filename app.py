@@ -50,10 +50,11 @@ def index():
                 error = "Invalid input: Number of sentences must be an integer."
                 # flash("Error: Invalid input: Number of sentences must be an integer.", "error")
             except Exception as e:
+                pass
                 # Catch unexpected errors during processing
-                app.logger.error(f"Unexpected error during summarization request: {
-                                 e}", exc_info=True)
-                error = "An unexpected server error occurred. Please try again later."
+                # app.logger.error(f"Unexpected error during summarization request: {
+                #                  e}", exc_info=True)
+                # error = "An unexpected server error occurred. Please try again later."
                 # flash("An unexpected server error occurred. Please try again later.", "error")
 
         # Render the template, passing relevant data
